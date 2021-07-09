@@ -11,5 +11,6 @@ abstract class _AuthStoreBase with Store {
   @action
   void increment() {
     value++;
+    
   } 
 }
