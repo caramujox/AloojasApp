@@ -38,6 +38,7 @@ dependencies:
   flutter_staggered_animations: ^1.0.0
 
 dev_dependencies:
+  build_runner:
   flutter_modular_test: ^1.0.1
   flutter_test:
     sdk: flutter
