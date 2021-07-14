@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:aloojas_app/app/modules/auth/auth_store.dart';
+import 'package:aloojas_app/app/modules/welcome/welcome_store.dart';
  
 void main() {
-  late AuthStore store;
+  late WelcomeStore store;
 
   setUpAll(() {
-    store = AuthStore();
+    store = WelcomeStore();
   });
 
   test('increment count', () async {

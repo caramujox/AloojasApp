@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:aloojas_app/app/modules/login/login_store.dart';
+import 'package:aloojas_app/app/modules/onibus/onibus_store.dart';
  
 void main() {
-  late LoginStore store;
+  late OnibusStore store;
 
   setUpAll(() {
-    store = LoginStore();
+    store = OnibusStore();
   });
 
   test('increment count', () async {
