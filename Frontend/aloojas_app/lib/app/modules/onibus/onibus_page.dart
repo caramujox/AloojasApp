@@ -1,6 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:aloojas_app/app/modules/onibus/onibus_store.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_triple/flutter_triple.dart';
 
 class OnibusPage extends StatefulWidget {
   final String title;
@@ -14,12 +15,7 @@ class OnibusPageState extends State<OnibusPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Column(
-        children: <Widget>[],
-      ),
+      body:  ScopedBuilder<OnibusStore, Exception, List<OnibusModel>>(),      
     );
   }
 }
