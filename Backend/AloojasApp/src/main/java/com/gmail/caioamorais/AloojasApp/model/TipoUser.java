@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name= "tipo_usuario")
-public class TipoUser {
+public class TipoUser  {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private long idTipoUsuario;
@@ -22,4 +23,4 @@ public class TipoUser {
     public TipoUser(TipoUserForm form){
         this.nomeTipoUsuario = form.getNomeTipoUsuario();
     }
-}
+    }

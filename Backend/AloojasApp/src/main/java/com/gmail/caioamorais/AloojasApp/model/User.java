@@ -1,10 +1,9 @@
 package com.gmail.caioamorais.AloojasApp.model;
 
-import com.gmail.caioamorais.AloojasApp.dto_form.form.UserForm;
 import lombok.*;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
+
 
 @Getter
 @Setter
