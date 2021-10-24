@@ -4,6 +4,7 @@ import com.gmail.caioamorais.AloojasApp.dto_form.dto.EventoDto;
 import com.gmail.caioamorais.AloojasApp.dto_form.form.EventoForm;
 import com.gmail.caioamorais.AloojasApp.model.Evento;
 import com.gmail.caioamorais.AloojasApp.service.EventoService;
+import com.gmail.caioamorais.AloojasApp.service.FileService;
 import lombok.AllArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -24,11 +25,18 @@ import javax.validation.Valid;
 @RequestMapping("/eventos")
 public class EventoController {
     private final EventoService service;
+    private final FileService fileService;
 
     @GetMapping
     public ResponseEntity<Page<EventoDto>> getAllEvento(@PageableDefault(sort = "horarioEvento", direction = Sort.Direction.ASC, page = 0, size = 4) Pageable paginacao ){
         Page<EventoDto> listEvento = service.findAllEvento(paginacao);
         return new ResponseEntity<>(listEvento, HttpStatus.OK);
+    }
+
+    @GetMapping("/export")
+    public ResponseEntity<Page<EventoDto>> export(@PageableDefault(sort = "horarioEvento", direction = Sort.Direction.ASC, page = 0, size = 4) Pageable paginacao ) throws Exception {
+        fileService.createFile();
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PostMapping()
@@ -53,4 +61,5 @@ public class EventoController {
         service.deleteEvento(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
 }

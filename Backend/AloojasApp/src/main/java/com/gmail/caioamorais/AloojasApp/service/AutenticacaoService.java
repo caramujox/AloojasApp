@@ -4,6 +4,7 @@ import com.gmail.caioamorais.AloojasApp.exceptions.UserNotFoundException;
 import com.gmail.caioamorais.AloojasApp.model.Usuario;
 import com.gmail.caioamorais.AloojasApp.repository.UsuarioRepository;
 import lombok.AllArgsConstructor;
+import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Service
+@ToString
 public class AutenticacaoService implements UserDetailsService {
 
     @Autowired

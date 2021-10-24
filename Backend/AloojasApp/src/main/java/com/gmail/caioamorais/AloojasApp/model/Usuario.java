@@ -25,7 +25,7 @@ public class Usuario implements UserDetails {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, updatable = false)
-    private long idUsuario;
+    private Long idUsuario;
     private LocalDateTime dataHoraCriacao = LocalDateTime.now();
     private String email;
     private String senha;
